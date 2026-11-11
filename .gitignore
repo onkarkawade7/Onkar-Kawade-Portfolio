@@ -1,0 +1,11 @@
+# Local and system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Temporary QA files
+_qa-*
