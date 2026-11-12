@@ -12,6 +12,8 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+The pharmacology study notes live in `antiepileptic-drugs.html` and can be opened directly in a browser.
+
 ## What's included
 
 - Responsive glass navigation with mobile menu
@@ -29,11 +31,18 @@ Then visit `http://localhost:8000`.
 ├── index.html
 ├── styles.css
 ├── script.js
+├── antiepileptic-drugs.html
 ├── robots.txt
 ├── assets/
 │   └── favicon.svg
 └── README.md
 ```
+
+## Pharmacology notes
+
+`antiepileptic-drugs.html` is a self-contained, glassmorphism study page based on the antiepileptic drugs chapter of KD Tripathi's *Essentials of Medical Pharmacology*. It includes classification, mechanisms, drug profiles, drugs of choice, status epilepticus, adverse effects, interactions, and quick-review questions. It has its own dark/light theme toggle and print styles; no build step is required.
+
+> These notes are an educational aid only. Verify all doses and protocols against the current textbook and institutional guidelines before clinical use.
 
 ## Make it yours
 

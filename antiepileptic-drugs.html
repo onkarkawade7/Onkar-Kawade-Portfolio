@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glassmorphism study notes on antiepileptic drugs based on KD Tripathi's Essentials of Medical Pharmacology — classification, mechanisms, drug profiles, clinical uses and status epilepticus.">
+  <meta name="author" content="Onkar Kawade">
+  <meta name="theme-color" content="#071417">
+  <title>Antiepileptic Drugs — KD Tripathi Notes</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var saved = localStorage.getItem("aed-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (error) { /* default theme */ }
+    })();
+  </script>
+
+  <style>
+    /* =========================================================
+       Antiepileptic Drugs — KD Tripathi study notes
+       Glassmorphism theme, self-contained page
+       ========================================================= */
+
+    :root {
+      --font-sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+      --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+      --bg: #071417;
+      --text: #eefaf7;
+      --muted: #9bb3b1;
+      --faint: #78918e;
+
+      --accent: #8df0d2;
+      --accent-rgb: 141, 240, 210;
+      --accent-2: #aab8ff;
+      --accent-3: #ffb3d1;
+      --amber: #ffd28a;
+      --red: #ff9aa8;
+
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --glass: rgba(255, 255, 255, 0.045);
+      --glass-strong: rgba(255, 255, 255, 0.085);
+      --glass-border: rgba(255, 255, 255, 0.13);
+      --glass-highlight: rgba(255, 255, 255, 0.18);
+
+      --nav-bg: rgba(8, 24, 27, 0.62);
+      --nav-bg-scrolled: rgba(8, 24, 27, 0.88);
+      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.25);
+      --shadow-hover: 0 40px 90px rgba(0, 0, 0, 0.35);
+
+      --primary-grad: linear-gradient(135deg, #b1fbe7 0%, #8df0d2 42%, #a9c7ff 100%);
+      --primary-text: #06231e;
+
+      --accent-soft: rgba(141, 240, 210, 0.11);
+      --violet-soft: rgba(170, 184, 255, 0.12);
+      --rose-soft: rgba(255, 179, 209, 0.1);
+      --amber-soft: rgba(255, 210, 138, 0.1);
+      --red-soft: rgba(255, 154, 168, 0.1);
+
+      --orb-mint: rgba(49, 210, 172, 0.23);
+      --orb-violet: rgba(105, 126, 255, 0.18);
+      --orb-rose: rgba(255, 118, 172, 0.12);
+
+      --gutter: clamp(18px, 4vw, 42px);
+      --radius: 26px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      color-scheme: dark;
+    }
+
+    html[data-theme="light"] {
+      --bg: #edf4f1;
+      --text: #0c2b27;
+      --muted: #526e6a;
+      --faint: #57706c;
+
+      --accent: #0b8f75;
+      --accent-rgb: 11, 143, 117;
+      --accent-2: #496ad8;
+      --accent-3: #bd4c78;
+      --amber: #9a6414;
+      --red: #b43a52;
+
+      --line: rgba(12, 43, 39, 0.1);
+      --line-strong: rgba(12, 43, 39, 0.18);
+      --glass: rgba(255, 255, 255, 0.4);
+      --glass-strong: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.75);
+      --glass-highlight: rgba(255, 255, 255, 0.95);
+
+      --nav-bg: rgba(247, 252, 250, 0.7);
+      --nav-bg-scrolled: rgba(247, 252, 250, 0.92);
+      --shadow-soft: 0 30px 80px rgba(22, 68, 59, 0.1);
+      --shadow-hover: 0 40px 90px rgba(22, 68, 59, 0.16);
+
+      --primary-grad: linear-gradient(135deg, #108b73 0%, #2e7eaa 52%, #496ad8 100%);
+      --primary-text: #f5fffc;
+
+      --accent-soft: rgba(11, 143, 117, 0.1);
+      --violet-soft: rgba(73, 106, 216, 0.1);
+      --rose-soft: rgba(189, 76, 120, 0.09);
+      --amber-soft: rgba(154, 100, 20, 0.1);
+      --red-soft: rgba(180, 58, 82, 0.09);
+
+      --orb-mint: rgba(34, 180, 146, 0.2);
+      --orb-violet: rgba(80, 108, 220, 0.14);
+      --orb-rose: rgba(210, 92, 140, 0.12);
+      color-scheme: light;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: rgba(var(--accent-rgb), 0.3); color: var(--text); }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--accent) 35%, transparent);
+      border: 3px solid var(--bg);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent) 55%, transparent); }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+
+    h1, h2, h3, h4, p, ul, ol { margin-top: 0; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #06231e;
+      font-weight: 700;
+      transform: translateY(-160%);
+      transition: transform 0.25s var(--ease);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - var(--gutter) * 2));
+      margin-inline: auto;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.9;
+      animation: drift 22s var(--ease) infinite alternate;
+    }
+    .orb--mint { width: 44vw; height: 44vw; top: -12vw; left: -8vw; background: var(--orb-mint); }
+    .orb--violet { width: 38vw; height: 38vw; top: 26%; right: -12vw; background: var(--orb-violet); animation-delay: -7s; }
+    .orb--rose { width: 32vw; height: 32vw; bottom: -10vw; left: 22%; background: var(--orb-rose); animation-delay: -14s; }
+
+    @keyframes drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(4vw, 3vw, 0) scale(1.12); }
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 120;
+      height: 2px;
+      width: 0;
+      background: var(--primary-grad);
+      box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.6);
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px var(--gutter);
+      pointer-events: none;
+    }
+
+    .nav {
+      pointer-events: auto;
+      width: min(1180px, 100%);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 12px 10px 18px;
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      background: var(--nav-bg);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .site-header.is-scrolled .nav {
+      background: var(--nav-bg-scrolled);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary-grad);
+      color: var(--primary-text);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-inline: auto;
+    }
+
+    .nav-links a {
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.is-active {
+      color: var(--text);
+      background: var(--glass-strong);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .icon-btn {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      background: var(--glass);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .icon-btn:hover { background: var(--glass-strong); transform: translateY(-1px); }
+    .icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+    .theme-toggle .icon-moon { display: none; }
+    html[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+    html[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+    .menu-toggle { display: none; }
+    .menu-toggle span {
+      display: block;
+      width: 15px;
+      height: 1.5px;
+      margin: 3px auto;
+      background: currentColor;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+
+    /* ---------- Shared type ---------- */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.12);
+    }
+
+    .eyebrow-sep { opacity: 0.45; }
+
+    .section {
+      position: relative;
+      padding: clamp(58px, 8vw, 100px) 0;
+    }
+
+    .section + .section { border-top: 1px solid var(--line); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+      gap: clamp(24px, 5vw, 70px);
+      align-items: end;
+      margin-bottom: clamp(28px, 4vw, 46px);
+    }
+
+    .section-number {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-style: italic;
+      letter-spacing: 0.04em;
+    }
+
+    .section-title {
+      margin-bottom: 0;
+      font-size: clamp(30px, 4.6vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .section-title em {
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .glass {
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      background: var(--glass);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      background: var(--glass);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .pill--mint { background: var(--accent-soft); border-color: rgba(var(--accent-rgb), 0.25); color: var(--accent); }
+    .pill--violet { background: var(--violet-soft); border-color: rgba(170, 184, 255, 0.25); color: var(--accent-2); }
+    .pill--rose { background: var(--rose-soft); border-color: rgba(255, 179, 209, 0.25); color: var(--accent-3); }
+    .pill--amber { background: var(--amber-soft); border-color: rgba(255, 210, 138, 0.25); color: var(--amber); }
+
+    .js [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      position: relative;
+      padding: clamp(130px, 16vw, 190px) 0 clamp(58px, 8vw, 96px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: clamp(34px, 6vw, 84px);
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin-bottom: 22px;
+      font-size: clamp(48px, 8.2vw, 94px);
+      font-weight: 600;
+      letter-spacing: -0.065em;
+      line-height: 0.92;
+    }
+
+    .hero h1 em {
+      display: block;
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      max-width: 58ch;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.5vw, 16px);
+      line-height: 1.8;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.25s var(--ease), box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--primary-grad);
+      color: var(--primary-text);
+      box-shadow: 0 14px 34px rgba(var(--accent-rgb), 0.22);
+    }
+    .btn-primary:hover { box-shadow: 0 20px 44px rgba(var(--accent-rgb), 0.32); }
+    .btn-glass {
+      border-color: var(--glass-border);
+      background: var(--glass);
+      color: var(--text);
+      backdrop-filter: blur(12px);
+    }
+    .btn-glass:hover { background: var(--glass-strong); }
+
+    .hero-card {
+      position: relative;
+      padding: 24px;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(var(--accent-rgb), 0.16), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(170, 184, 255, 0.12), transparent 50%);
+      pointer-events: none;
+    }
+    .hero-card > * { position: relative; }
+
+    .hero-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .hero-card-head p {
+      margin: 0;
+      color: var(--faint);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .hero-stat {
+      padding: 16px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+    .hero-stat strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .hero-stat span {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 10.5px;
+      line-height: 1.6;
+    }
+    .hero-note svg { flex: 0 0 auto; width: 15px; height: 15px; margin-top: 2px; color: var(--accent); }
+
+    /* ---------- Cards and grids ---------- */
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+
+    .card {
+      padding: clamp(20px, 2.6vw, 28px);
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .card p { margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .card p + p { margin-top: 10px; }
+
+    .card-kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .icon-badge {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 16px;
+      border: 1px solid var(--glass-border);
+      border-radius: 13px;
+      background: var(--glass-strong);
+      color: var(--accent);
+    }
+    .icon-badge svg { width: 19px; height: 19px; }
+
+    .list-clean { margin: 0; padding: 0; list-style: none; }
+    .list-clean li {
+      position: relative;
+      padding: 8px 0 8px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .list-clean li:first-child { border-top: 0; padding-top: 0; }
+    .list-clean li::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 1px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+    .list-clean li:first-child::before { top: 8px; }
+    .list-clean strong { color: var(--text); font-weight: 700; }
+
+    .callout {
+      display: flex;
+      gap: 14px;
+      padding: 18px 20px;
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      background: var(--glass);
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+    .callout svg { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 2px; }
+    .callout p { margin: 0; color: var(--muted); }
+    .callout strong { color: var(--text); }
+    .callout--tip { border-color: rgba(var(--accent-rgb), 0.24); background: var(--accent-soft); }
+    .callout--tip svg { color: var(--accent); }
+    .callout--warn { border-color: rgba(255, 210, 138, 0.26); background: var(--amber-soft); }
+    .callout--warn svg { color: var(--amber); }
+    .callout--danger { border-color: rgba(255, 154, 168, 0.28); background: var(--red-soft); }
+    .callout--danger svg { color: var(--red); }
+
+    /* ---------- Classification ---------- */
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .class-item {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 13px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.022);
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.25s var(--ease);
+    }
+    .class-item:hover {
+      border-color: var(--line-strong);
+      background: var(--glass);
+      transform: translateY(-2px);
+    }
+    .class-num {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 14px;
+    }
+    .class-item h4 {
+      margin: 1px 0 3px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .class-item p { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.55; }
+
+    /* ---------- Mechanisms ---------- */
+
+    .mechanism-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mechanism {
+      position: relative;
+      padding: 22px;
+      overflow: hidden;
+    }
+    .mechanism::after {
+      content: "";
+      position: absolute;
+      right: -24px;
+      bottom: -24px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1), transparent 70%);
+      pointer-events: none;
+    }
+    .mechanism h3 { font-size: 15px; }
+    .mechanism p { font-size: 12px; }
+    .mechanism .drug-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 14px;
+    }
+    .mechanism .drug-list span {
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 600;
+    }
+
+    /* ---------- Tables ---------- */
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      background: var(--glass);
+      box-shadow: var(--shadow-soft);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 660px;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    caption {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    th, td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    thead th {
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    tbody th {
+      color: var(--text);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    tbody tr:last-child th,
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: rgba(255, 255, 255, 0.025); }
+    td { color: var(--muted); }
+    td strong { color: var(--text); font-weight: 700; }
+    .tick { color: var(--accent); font-weight: 800; }
+
+    /* ---------- Drug accordions ---------- */
+
+    .drug-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .drug {
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      background: var(--glass);
+      overflow: hidden;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .drug:hover { border-color: var(--line-strong); }
+    .drug[open] {
+      border-color: rgba(var(--accent-rgb), 0.3);
+      background: var(--glass-strong);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+    }
+
+    .drug summary {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 18px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    .drug summary::-webkit-details-marker { display: none; }
+
+    .drug-index {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 15px;
+    }
+
+    .drug-title { min-width: 0; }
+    .drug-title strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .drug-title span {
+      display: block;
+      margin-top: 2px;
+      color: var(--faint);
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
+    .drug-chevron {
+      width: 17px;
+      height: 17px;
+      color: var(--faint);
+      transition: transform 0.3s var(--ease), color 0.2s ease;
+    }
+    .drug[open] .drug-chevron { transform: rotate(180deg); color: var(--accent); }
+
+    .drug-body {
+      padding: 0 18px 20px 74px;
+      border-top: 1px solid var(--line);
+    }
+
+    .drug-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding-top: 18px;
+    }
+
+    .drug-fact h4 {
+      margin: 0 0 5px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    .drug-fact p,
+    .drug-fact ul {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .drug-fact ul { padding-left: 15px; }
+    .drug-fact li + li { margin-top: 3px; }
+    .drug-fact strong { color: var(--text); }
+
+    .drug-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ---------- Status timeline ---------- */
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 17px;
+      width: 1px;
+      background: linear-gradient(var(--accent), rgba(var(--accent-rgb), 0.1));
+    }
+    .timeline li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 16px;
+    }
+    .timeline-dot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 35px;
+      height: 35px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .timeline-content {
+      padding: 16px 18px;
+    }
+    .timeline-content h3 {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .timeline-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .timeline-content strong { color: var(--text); }
+    .timeline-content .pill { margin-top: 9px; }
+
+    /* ---------- Quick review ---------- */
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .review-item {
+      display: flex;
+      gap: 13px;
+      padding: 17px 18px;
+    }
+    .review-item > span {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--violet-soft);
+      color: var(--accent-2);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .review-item h3 { margin-bottom: 3px; font-size: 13px; }
+    .review-item p { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.6; }
+
+    details.self-check {
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      background: var(--glass);
+      padding: 0 16px;
+    }
+    details.self-check summary {
+      padding: 13px 0;
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    details.self-check p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    details.self-check[open] summary { color: var(--accent); }
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+      padding: 46px 0 36px;
+      border-top: 1px solid var(--line);
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .footer p {
+      max-width: 62ch;
+      margin: 0;
+      color: var(--faint);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+    .footer strong { color: var(--muted); }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .footer-links a { transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--accent); }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50%;
+      background: var(--nav-bg-scrolled);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      cursor: pointer;
+    }
+    .back-to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+    .back-to-top svg { width: 18px; height: 18px; }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 1020px) {
+      .nav-links { display: none; }
+      .nav-actions { margin-left: auto; }
+      .menu-toggle { display: inline-grid; }
+
+      .nav-links.is-open {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        display: grid;
+        gap: 2px;
+        margin: 0;
+        padding: 10px;
+        border: 1px solid var(--glass-border);
+        border-radius: 22px;
+        background: var(--nav-bg-scrolled);
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(22px);
+      }
+      .nav-links.is-open a { padding: 10px 14px; border-radius: 12px; }
+
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 540px; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; }
+      .section-intro { max-width: 66ch; }
+      .mechanism-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .site-header { padding: 10px 12px; }
+      .brand-text { display: none; }
+      .hero { padding-top: 118px; }
+      .hero h1 { font-size: clamp(46px, 15vw, 72px); }
+      .grid-2,
+      .grid-3,
+      .class-grid,
+      .mechanism-grid,
+      .review-grid { grid-template-columns: 1fr; }
+      .drug summary { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 11px; padding: 14px; }
+      .drug-index { width: 34px; height: 34px; }
+      .drug-body { padding: 0 14px 17px; }
+      .drug-facts { grid-template-columns: 1fr; }
+      .timeline::before { left: 15px; }
+      .timeline li { grid-template-columns: 31px minmax(0, 1fr); gap: 12px; }
+      .timeline-dot { width: 31px; height: 31px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .footer-grid { flex-direction: column; }
+    }
+
+    @media (max-width: 420px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .js [data-reveal] { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      @page { margin: 14mm; }
+      :root,
+      html[data-theme="light"] {
+        --bg: #fff;
+        --text: #111;
+        --muted: #333;
+        --faint: #555;
+        --line: #ddd;
+        --line-strong: #bbb;
+        --glass: #fff;
+        --glass-strong: #fff;
+        --glass-border: #ddd;
+        --shadow-soft: none;
+        --shadow-hover: none;
+        --accent: #0a6b58;
+        --accent-2: #2c4699;
+        --accent-3: #8c2d50;
+        --amber: #7a4c00;
+        --red: #8c1f33;
+      }
+      body { background: #fff; color: #111; font-size: 11pt; }
+      .ambient, .site-header, .scroll-progress, .back-to-top, .hero-actions, .skip-link, .hero-card, .drug-chevron { display: none !important; }
+      .hero { padding: 0 0 24px; }
+      .hero-grid { display: block; }
+      .hero h1 { font-size: 34pt; }
+      .section { padding: 22px 0; break-inside: auto; }
+      .section-head { display: block; margin-bottom: 14px; break-after: avoid; }
+      .section-intro { margin-top: 8px; }
+      .glass, .drug, .table-wrap { box-shadow: none; background: #fff; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0; font-size: 9pt; }
+      th, td { padding: 8px 10px; }
+      thead { display: table-header-group; }
+      tbody tr { break-inside: avoid; }
+      .drug, .card, .class-item, .mechanism, .review-item, .callout, details.self-check { break-inside: avoid; }
+      .drug-body { display: block !important; padding-left: 18px; }
+      details > summary { list-style: none; }
+      a { text-decoration: none; color: #111; }
+      .footer { padding: 18px 0; }
+      .js [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to notes</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb--mint"></span>
+    <span class="orb orb--violet"></span>
+    <span class="orb orb--rose"></span>
+    <span class="grain"></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Notes navigation">
+      <a class="brand" href="#top">
+        <span class="brand-mark">OK</span>
+        <span class="brand-text">Onkar's Notes<small>Pharmacology</small></span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#classification">Classification</a>
+        <a href="#mechanisms">Mechanisms</a>
+        <a href="#drugs">Drugs</a>
+        <a href="#uses">Clinical uses</a>
+        <a href="#status">Emergency</a>
+        <a href="#review">Review</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" id="print-btn" aria-label="Print these notes" title="Print notes">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8" rx="1"></rect>
+          </svg>
+        </button>
+        <button class="icon-btn theme-toggle" type="button" id="theme-toggle" aria-label="Switch to light theme" title="Toggle theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div data-reveal>
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Pharmacology
+            <span class="eyebrow-sep" aria-hidden="true">·</span>
+            Chapter 30
+          </p>
+
+          <h1 id="hero-title">Antiepileptic <em>drugs</em></h1>
+
+          <p class="hero-sub">
+            A concise, exam-oriented walkthrough of seizure pharmacology — from the
+            classification and mechanisms in <strong>KD Tripathi</strong> to the drugs
+            of choice, adverse effects, interactions, and the status epilepticus protocol.
+          </p>
+
+          <div class="hero-meta">
+            <span class="pill pill--mint">KD Tripathi · Essentials of Medical Pharmacology</span>
+            <span class="pill">Exam-oriented</span>
+            <span class="pill">MBBS study notes</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#classification">
+              Start with classification
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+            </a>
+            <a class="btn btn-glass" href="#drugs">
+              Jump to drug profiles
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card glass" data-reveal aria-label="Chapter at a glance">
+          <div class="hero-card-head">
+            <p>Chapter at a glance</p>
+            <span class="pill pill--violet">High yield</span>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>10</strong><span>drug classes</span></div>
+            <div class="hero-stat"><strong>4</strong><span>core targets</span></div>
+            <div class="hero-stat"><strong>20+</strong><span>drug profiles</span></div>
+            <div class="hero-stat"><strong>1</strong><span>status protocol</span></div>
+          </div>
+          <div class="hero-note">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg>
+            <span>Study aid only — doses and protocols must be verified against your prescribed textbook and institutional guidelines before clinical use.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container" id="overview" aria-labelledby="overview-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">01</span>
+          <h2 class="section-title" id="overview-title">The <em>basics</em></h2>
+        </div>
+        <p class="section-intro">
+          Epilepsy is a disorder of recurrent, unprovoked seizures caused by abnormal,
+          excessive, synchronous neuronal firing. Antiepileptic drugs suppress this
+          abnormal firing without eliminating normal neuronal activity.
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Definition · KD Tripathi</span>
+          <h3>What is epilepsy?</h3>
+          <p>
+            A group of CNS disorders characterised by <strong>paroxysmal cerebral dysrhythmia</strong>,
+            manifesting as brief episodes — seizures — of loss or disturbance of consciousness,
+            with or without characteristic body movements, sensory or psychiatric phenomena.
+          </p>
+          <p>
+            The episodes are unpredictable and their frequency is highly variable. A seizure
+            is a transient event; epilepsy is the tendency to have recurrent unprovoked seizures.
+          </p>
+        </article>
+
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Clinical aim</span>
+          <h3>Goals of therapy</h3>
+          <ul class="list-clean">
+            <li><strong>Seizure freedom</strong> with the lowest effective dose of a single drug.</li>
+            <li><strong>Protect function</strong> — minimise cognitive, behavioural and motor adverse effects.</li>
+            <li><strong>Prevent injury</strong> and reduce psychosocial consequences of seizures.</li>
+            <li><strong>Individualise</strong> therapy by seizure type, age, sex, comorbidity and drug interactions.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout callout--warn" data-reveal style="margin-bottom:16px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg>
+        <p><strong>Not every seizure is epilepsy.</strong> A single tonic–clonic seizure in a person with no predisposing factor — no head injury, family history, neurological abnormality, abnormal EEG or brain scan — may not merit long-term antiepileptic therapy. Always look for a reversible cause first.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal>
+        <table>
+          <caption>Clinical classification of seizures · simplified from KD Tripathi</caption>
+          <thead>
+            <tr>
+              <th scope="col">Group</th>
+              <th scope="col">Seizure type</th>
+              <th scope="col">Key clinical features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" rowspan="3">Partial (focal)</th>
+              <td><strong>Simple partial</strong></td>
+              <td>Consciousness retained; motor, sensory, autonomic or psychic symptoms; may show localised EEG discharge.</td>
+            </tr>
+            <tr>
+              <td><strong>Complex partial</strong></td>
+              <td>Consciousness impaired; temporal-lobe / psychomotor features such as automatisms, aura, confusion; often drug-refractory.</td>
+            </tr>
+            <tr>
+              <td><strong>Secondarily generalised</strong></td>
+              <td>Focal onset that spreads to a generalised tonic–clonic seizure.</td>
+            </tr>
+            <tr>
+              <th scope="row" rowspan="7">Generalised</th>
+              <td><strong>Absence (petit mal)</strong></td>
+              <td>Brief 3 Hz spike-and-wave lapse of awareness, often in children; no post-ictal confusion; may be provoked by hyperventilation.</td>
+            </tr>
+            <tr>
+              <td><strong>Myoclonic</strong></td>
+              <td>Sudden brief muscle jerks; may occur in juvenile myoclonic epilepsy, often after sleep deprivation.</td>
+            </tr>
+            <tr>
+              <td><strong>Clonic</strong></td>
+              <td>Rhythmic jerking with loss of consciousness.</td>
+            </tr>
+            <tr>
+              <td><strong>Tonic</strong></td>
+              <td>Sudden generalised stiffening, often with fall.</td>
+            </tr>
+            <tr>
+              <td><strong>Tonic–clonic (grand mal)</strong></td>
+              <td>Tonic phase followed by clonic jerking, cyanosis, incontinence, post-ictal confusion and sleep.</td>
+            </tr>
+            <tr>
+              <td><strong>Atonic</strong></td>
+              <td>Sudden loss of muscle tone, drop attacks; injury risk.</td>
+            </tr>
+            <tr>
+              <td><strong>Infantile spasms</strong></td>
+              <td>West syndrome: flexor/extensor spasms in infancy with developmental delay and hypsarrhythmia.</td>
+            </tr>
+            <tr>
+              <th scope="row">Special</th>
+              <td><strong>Status epilepticus</strong></td>
+              <td>Continuous seizure activity for ≥5 minutes (practical definition; older texts use 30 minutes), or recurrent seizures without recovery of consciousness — a medical emergency.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <section class="section container" id="classification" aria-labelledby="classification-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">02</span>
+          <h2 class="section-title" id="classification-title">Classification of <em>AEDs</em></h2>
+        </div>
+        <p class="section-intro">
+          KD Tripathi groups antiepileptic drugs by chemical structure. Knowing the class
+          helps you predict mechanism, adverse effects and interactions — but the seizure
+          type still decides the drug.
+        </p>
+      </div>
+
+      <h3 class="sr-only">Drug classes by chemical structure</h3>
+      <div class="class-grid" data-reveal>
+        <div class="class-item">
+          <span class="class-num">1</span>
+          <div><h4>Barbiturate</h4><p>Phenobarbitone</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">2</span>
+          <div><h4>Deoxybarbiturate</h4><p>Primidone</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">3</span>
+          <div><h4>Hydantoin</h4><p>Phenytoin, fosphenytoin</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">4</span>
+          <div><h4>Iminostilbene</h4><p>Carbamazepine, oxcarbazepine</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">5</span>
+          <div><h4>Succinimide</h4><p>Ethosuximide</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">6</span>
+          <div><h4>Aliphatic carboxylic acid</h4><p>Valproic acid, sodium valproate, divalproex</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">7</span>
+          <div><h4>Benzodiazepines</h4><p>Diazepam, clonazepam, clobazam, lorazepam</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">8</span>
+          <div><h4>Phenyltriazine</h4><p>Lamotrigine</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">9</span>
+          <div><h4>Cyclic GABA analogue</h4><p>Gabapentin</p></div>
+        </div>
+        <div class="class-item">
+          <span class="class-num">10</span>
+          <div><h4>Newer drugs</h4><p>Vigabatrin, tiagabine, topiramate, zonisamide, levetiracetam, pregabalin, felbamate, lacosamide, rufinamide, perampanel</p></div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Spectrum</span>
+          <h3>Broad-spectrum drugs</h3>
+          <p>Useful across both focal and generalised seizures — but “broad” does not mean interchangeable.</p>
+          <ul class="list-clean" style="margin-top:12px;">
+            <li><strong>Valproate</strong> — absence, myoclonic, tonic–clonic, focal.</li>
+            <li><strong>Lamotrigine</strong> — focal and generalised, including absence.</li>
+            <li><strong>Levetiracetam</strong> — focal and generalised; few interactions.</li>
+            <li><strong>Topiramate</strong> — focal and generalised; broad but sedating.</li>
+            <li><strong>Phenobarbitone, clonazepam, zonisamide, felbamate</strong> — broader coverage with notable limitations.</li>
+          </ul>
+        </article>
+
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Spectrum</span>
+          <h3>Narrow-spectrum drugs</h3>
+          <p>Match the drug to the seizure type; some can worsen seizures they are not meant to treat.</p>
+          <ul class="list-clean" style="margin-top:12px;">
+            <li><strong>Phenytoin, carbamazepine</strong> — focal and tonic–clonic; may worsen absence/myoclonic seizures.</li>
+            <li><strong>Ethosuximide</strong> — absence seizures only.</li>
+            <li><strong>Gabapentin, pregabalin</strong> — focal seizures; also neuropathic pain.</li>
+            <li><strong>Vigabatrin, tiagabine, lacosamide, perampanel</strong> — focal seizures (selected uses).</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout callout--tip" data-reveal style="margin-top:16px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"></path></svg>
+        <p><strong>Exam framing:</strong> classify by structure (Tripathi), then by mechanism, then by clinical spectrum. The seizure-type table later in these notes is the practical bridge between the three.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="mechanisms" aria-labelledby="mechanisms-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">03</span>
+          <h2 class="section-title" id="mechanisms-title">How they <em>work</em></h2>
+        </div>
+        <p class="section-intro">
+          Seizures reflect an imbalance between excitation and inhibition. Antiepileptic
+          drugs either dampen excitatory currents or strengthen inhibitory GABA signalling —
+          usually in a use-dependent way, so normal activity is relatively spared.
+        </p>
+      </div>
+
+      <div class="mechanism-grid">
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"></path></svg>
+          </div>
+          <h3>Voltage-gated Na⁺ channel block</h3>
+          <p>Prolongs the inactivated state of Na⁺ channels and reduces high-frequency repetitive firing. This is the commonest mechanism among first-line focal AEDs.</p>
+          <div class="drug-list">
+            <span>Phenytoin</span><span>Carbamazepine</span><span>Lamotrigine</span><span>Valproate</span><span>Topiramate</span><span>Lacosamide</span><span>Zonisamide</span><span>Rufinamide</span>
+          </div>
+        </article>
+
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"></path></svg>
+          </div>
+          <h3>GABA-A receptor facilitation</h3>
+          <p>Increases Cl⁻ conductance and hyperpolarises neurons. Barbiturates increase channel <em>duration</em>; benzodiazepines increase channel <em>frequency</em>.</p>
+          <div class="drug-list">
+            <span>Phenobarbitone</span><span>Primidone</span><span>Diazepam</span><span>Lorazepam</span><span>Clonazepam</span><span>Clobazam</span>
+          </div>
+        </article>
+
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path><circle cx="18" cy="17" r="3"></circle></svg>
+          </div>
+          <h3>GABA metabolism &amp; reuptake</h3>
+          <p>Raises synaptic GABA by blocking its breakdown or its reuptake. Vigabatrin is irreversible; tiagabine targets the GAT-1 transporter.</p>
+          <div class="drug-list">
+            <span>Vigabatrin</span><span>Tiagabine</span><span>Valproate</span>
+          </div>
+        </article>
+
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c3-6 6 6 9 0s6 6 9 0"></path></svg>
+          </div>
+          <h3>T-type Ca²⁺ channel block</h3>
+          <p>Targets low-threshold T-type Ca²⁺ currents in thalamic relay neurons — the pacemaker of 3 Hz spike-and-wave discharges in absence epilepsy.</p>
+          <div class="drug-list">
+            <span>Ethosuximide</span><span>Valproate</span><span>Zonisamide</span>
+          </div>
+        </article>
+
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M8 6h8M8 18h8"></path><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <h3>α₂δ subunit of Ca²⁺ channels</h3>
+          <p>Binds the α₂δ auxiliary subunit of voltage-gated Ca²⁺ channels and reduces excitatory neurotransmitter release. Also useful in neuropathic pain.</p>
+          <div class="drug-list">
+            <span>Gabapentin</span><span>Pregabalin</span>
+          </div>
+        </article>
+
+        <article class="mechanism glass" data-reveal>
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"></path></svg>
+          </div>
+          <h3>Glutamate &amp; other targets</h3>
+          <p>Reduce excitatory transmission at AMPA/NMDA receptors, modulate vesicular release, or inhibit carbonic anhydrase. These are mainly newer or reserve drugs.</p>
+          <div class="drug-list">
+            <span>Topiramate</span><span>Felbamate</span><span>Perampanel</span><span>Levetiracetam</span><span>Acetazolamide</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout callout--tip" data-reveal style="margin-top:16px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"></path></svg>
+        <p><strong>Use-dependence is the key idea.</strong> Phenytoin and carbamazepine block Na⁺ channels more strongly when neurons fire rapidly, which is why they suppress seizure discharges but spare normal firing. It also explains why they are less useful in absence epilepsy, where the pathology is thalamic T-type Ca²⁺ pacemaking.</p>
+      </div>
+    </section>
+
+
+    <section class="section container" id="drugs" aria-labelledby="drugs-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">04</span>
+          <h2 class="section-title" id="drugs-title">Drug <em>profiles</em></h2>
+        </div>
+        <p class="section-intro">
+          The high-yield facts for each agent: mechanism, clinical uses, adverse effects and
+          the interactions that show up in exams and on the wards. Tap a drug to expand it.
+        </p>
+      </div>
+
+      <h3 class="sr-only">Antiepileptic drug profiles</h3>
+      <div class="drug-list">
+        <details class="drug" open data-reveal>
+          <summary>
+            <span class="drug-index">01</span>
+            <span class="drug-title">
+              <strong>Phenytoin</strong>
+              <span>Hydantoin · first-line focal &amp; tonic–clonic · Na⁺ channel blocker</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Use-dependent block of voltage-gated Na⁺ channels; prolongs the inactivated state and limits high-frequency repetitive firing. Also reduces synaptic transmission and post-tetanic potentiation.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Generalised tonic–clonic and focal seizures; status epilepticus (IV phenytoin or fosphenytoin); trigeminal neuralgia; arrhythmias (historical). Not effective in absence seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <ul>
+                  <li><strong>Gingival hyperplasia, hirsutism, acne</strong>, coarsening of facial features.</li>
+                  <li>Ataxia, nystagmus, dysarthria, sedation, cognitive slowing.</li>
+                  <li>Megaloblastic anaemia (folate deficiency), osteomalacia (vitamin D deficiency).</li>
+                  <li>Hypersensitivity rash, SJS/TEN, DRESS; fetal hydantoin syndrome.</li>
+                  <li>IV: hypotension, arrhythmias, thrombophlebitis, purple glove syndrome.</li>
+                </ul>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; interactions</h4>
+                <p>Slow, variable oral absorption; ~90% protein-bound; hepatic metabolism is <strong>saturable (zero-order)</strong> at therapeutic doses, so small increments can cause toxicity. Potent enzyme inducer; displaces warfarin and steroids; valproate inhibits its metabolism.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Therapeutic range 10–20 µg/mL</span>
+              <span class="pill pill--amber">Zero-order kinetics</span>
+              <span class="pill">Gum hyperplasia</span>
+              <span class="pill">Teratogenic</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">02</span>
+            <span class="drug-title">
+              <strong>Fosphenytoin</strong>
+              <span>Hydantoin prodrug · IV/IM · safer local profile</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Water-soluble phosphate prodrug of phenytoin, rapidly hydrolysed by phosphatases to phenytoin. Same pharmacological action as phenytoin.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Status epilepticus and other situations needing parenteral phenytoin. Can be given IM when IV access is difficult. Doses are expressed as <strong>phenytoin equivalents (PE)</strong>.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Advantages</h4>
+                <p>Less local irritation and phlebitis than IV phenytoin; can be infused faster (up to 150 mg PE/min) with cardiac monitoring. No propylene glycol or ethanol vehicle.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Similar systemic toxicity to phenytoin; hypotension and arrhythmias with rapid infusion; paraesthesia, pruritus, rash; rare anaphylaxis. Still requires cardiac monitoring.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Prodrug</span>
+              <span class="pill">Phenytoin equivalents</span>
+              <span class="pill">Status epilepticus</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">03</span>
+            <span class="drug-title">
+              <strong>Carbamazepine</strong>
+              <span>Iminostilbene · DOC complex partial · trigeminal neuralgia</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Blocks voltage-gated Na⁺ channels in a use-dependent manner and reduces polysynaptic responses. Metabolised to an active epoxide; induces its own metabolism (autoinduction).</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p><strong>Drug of choice for complex partial (temporal lobe) seizures</strong> and secondarily generalised tonic–clonic seizures; generalised tonic–clonic; trigeminal neuralgia; bipolar disorder; some neuropathic pain.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <ul>
+                  <li>Diplopia, ataxia, dizziness, sedation — common and dose-related.</li>
+                  <li><strong>Hyponatraemia / SIADH</strong>, especially in the elderly.</li>
+                  <li>Aplastic anaemia, agranulocytosis, thrombocytopenia — rare but serious.</li>
+                  <li>Hepatotoxicity; rash, SJS/TEN (HLA-B*1502 in Asian populations), DRESS.</li>
+                  <li>Neural tube defects; reduces efficacy of oral contraceptives.</li>
+                </ul>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; interactions</h4>
+                <p>Hepatic metabolism; autoinduction shortens its half-life over 3–6 weeks. Potent CYP inducer (3A4, 2C9): lowers levels of oral contraceptives, warfarin, steroids, other AEDs. Valproate raises the active epoxide.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">DOC complex partial</span>
+              <span class="pill pill--amber">Hyponatraemia</span>
+              <span class="pill">HLA-B*1502</span>
+              <span class="pill">Autoinduction</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">04</span>
+            <span class="drug-title">
+              <strong>Oxcarbazepine</strong>
+              <span>Iminostilbene · focal seizures · fewer interactions than carbamazepine</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Prodrug rapidly reduced to the active monohydroxy derivative (MHD), which blocks Na⁺ channels. Similar antiseizure spectrum to carbamazepine.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Focal seizures with or without secondary generalisation; trigeminal neuralgia; adjunct in some generalised seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Hyponatraemia (more common than with carbamazepine), dizziness, diplopia, ataxia, rash, headache, nausea. Cross-hypersensitivity with carbamazepine is possible.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Less enzyme induction than carbamazepine and fewer drug interactions, but it can still reduce oral contraceptive efficacy. Monitor sodium in older adults.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Focal seizures</span>
+              <span class="pill pill--amber">Hyponatraemia</span>
+              <span class="pill">MHD</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">05</span>
+            <span class="drug-title">
+              <strong>Sodium valproate</strong>
+              <span>Aliphatic carboxylic acid · broad-spectrum · absence, myoclonic, tonic–clonic</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Multiple actions: Na⁺ channel block, T-type Ca²⁺ channel inhibition, increased GABA (inhibits GABA transaminase and succinic semialdehyde dehydrogenase). Broad-spectrum.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p><strong>Drug of choice for generalised absence and myoclonic seizures</strong>; also generalised tonic–clonic and focal seizures; bipolar disorder; migraine prophylaxis. Often used when several seizure types coexist.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <ul>
+                  <li><strong>Hepatotoxicity</strong> — highest risk in children under 2 and with polytherapy.</li>
+                  <li><strong>Pancreatitis</strong>, hyperammonaemia, thrombocytopenia.</li>
+                  <li>Weight gain, tremor, alopecia, polycystic ovaries.</li>
+                  <li><strong>Neural tube defects</strong> and developmental harm — avoid in pregnancy if possible.</li>
+                </ul>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; interactions</h4>
+                <p>Highly protein-bound; hepatic metabolism. Inhibits CYP2C9 and UGT, and inhibits epoxide hydrolase. <strong>Raises lamotrigine levels markedly</strong> (slow titration, rash risk); displaces phenytoin; raises carbamazepine epoxide.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Broad spectrum</span>
+              <span class="pill pill--amber">Hepatotoxic</span>
+              <span class="pill pill--rose">Teratogenic</span>
+              <span class="pill">Pancreatitis</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">06</span>
+            <span class="drug-title">
+              <strong>Ethosuximide</strong>
+              <span>Succinimide · DOC absence seizures · T-type Ca²⁺ blocker</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Selectively inhibits low-threshold <strong>T-type Ca²⁺ channels</strong> in thalamic relay neurons, suppressing the 3 Hz spike-and-wave discharge of absence epilepsy.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Drug of choice for simple absence seizures, especially when tonic–clonic seizures are absent. Ineffective for focal seizures and generalised tonic–clonic seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Gastrointestinal upset, nausea, anorexia; sedation, ataxia, headache; rash; rare blood dyscrasias and SLE-like syndrome. Psychiatric disturbance can occur.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Long half-life allows once- or twice-daily dosing. If both absence and tonic–clonic seizures coexist, valproate is usually preferred because ethosuximide will not cover the tonic–clonic component.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">DOC absence</span>
+              <span class="pill">T-type Ca²⁺</span>
+              <span class="pill">Paediatric use</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">07</span>
+            <span class="drug-title">
+              <strong>Phenobarbitone</strong>
+              <span>Barbiturate · neonatal seizures · GABA-A facilitator</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Binds a barbiturate site on the GABA-A receptor–Cl⁻ channel complex and <strong>increases the duration</strong> of channel opening, enhancing inhibitory neurotransmission. At high doses, also reduces glutamate-mediated excitation.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Neonatal seizures; generalised tonic–clonic and focal seizures; status epilepticus when other agents are unavailable; alternatives in resource-limited settings.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Sedation, cognitive impairment, hyperactivity and behavioural problems in children; rash; megaloblastic anaemia, osteomalacia; tolerance and dependence; respiratory depression in overdose. Enzyme inducer.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Cheap and effective, but its sedative and cognitive burden makes it a second-line choice in most modern protocols. Abrupt withdrawal can precipitate seizures.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Neonatal seizures</span>
+              <span class="pill pill--amber">Sedation</span>
+              <span class="pill">Enzyme inducer</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">08</span>
+            <span class="drug-title">
+              <strong>Primidone</strong>
+              <span>Deoxybarbiturate · prodrug of phenobarbitone</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Metabolised to phenobarbitone (major active metabolite) and phenylethylmalonamide. Shares the GABA-A facilitating action of barbiturates.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Generalised tonic–clonic and focal seizures; essential tremor (selected use). Largely superseded by better-tolerated agents.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Sedation, dizziness, ataxia, nausea, rash; behavioural changes; megaloblastic anaemia, osteomalacia; enzyme induction. Tolerance and dependence occur.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Start low and titrate slowly because the first dose can be markedly sedating. Like phenobarbitone, it is an enzyme inducer with many interactions.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill">Prodrug</span>
+              <span class="pill">Phenobarbitone</span>
+              <span class="pill">Sedation</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">09</span>
+            <span class="drug-title">
+              <strong>Benzodiazepines</strong>
+              <span>Diazepam · lorazepam · clonazepam · clobazam · GABA-A facilitators</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Bind the benzodiazepine site on GABA-A receptors and <strong>increase the frequency</strong> of Cl⁻ channel opening. They do not open the channel by themselves — endogenous GABA is required.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p><strong>Lorazepam IV</strong> is first-line for status epilepticus; <strong>diazepam IV/rectal</strong> for status and febrile seizures; <strong>clonazepam</strong> for myoclonic and absence seizures; <strong>clobazam</strong> as adjunct in focal and generalised epilepsies, including Lennox–Gastaut.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Sedation, ataxia, dizziness, anterograde amnesia, muscle weakness; respiratory depression with rapid IV use; tolerance, dependence and withdrawal seizures with long-term use.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Reserve long-term benzodiazepines for patients who need them; tolerance to the antiseizure effect develops. Flumazenil is the antagonist. Rectal diazepam and intranasal/buccal midazolam are practical out-of-hospital rescue options.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Status epilepticus</span>
+              <span class="pill pill--amber">Tolerance</span>
+              <span class="pill">Respiratory depression</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">10</span>
+            <span class="drug-title">
+              <strong>Lamotrigine</strong>
+              <span>Phenyltriazine · broad-spectrum · slow titration is essential</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Use-dependent Na⁺ channel block; also reduces glutamate release. Broad-spectrum activity against focal and generalised seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Focal seizures, generalised tonic–clonic, absence and myoclonic seizures; Lennox–Gastaut; bipolar depression maintenance. Often chosen when cognitive tolerability matters.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p><strong>Rash</strong> is the signature concern — can progress to SJS/TEN, especially with rapid titration or concurrent valproate. Also insomnia, headache, dizziness, diplopia, ataxia, nausea; rare haemophagocytic lymphohistiocytosis.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; interactions</h4>
+                <p>Half-life ~25–30 h as monotherapy, prolonged to ~60 h by valproate, shortened to ~12–15 h by enzyme inducers. Start low and go slow; halve the dose when adding valproate. Oral contraceptives can lower lamotrigine levels.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Broad spectrum</span>
+              <span class="pill pill--rose">Rash / SJS</span>
+              <span class="pill">Slow titration</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">11</span>
+            <span class="drug-title">
+              <strong>Levetiracetam</strong>
+              <span>Pyrrolidone derivative · broad-spectrum · minimal interactions</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Binds the synaptic vesicle protein <strong>SV2A</strong> and modulates neurotransmitter release. The exact downstream antiseizure mechanism is still debated.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Focal seizures with or without secondary generalisation; generalised tonic–clonic and myoclonic seizures; adjunct in status epilepticus; often preferred in pregnancy, liver disease and the elderly because of its favourable kinetics.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Somnolence, fatigue, dizziness; <strong>behavioural effects</strong> — irritability, aggression, anxiety, psychosis, especially in children and those with prior psychiatric history. Rare rash/SJS.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; interactions</h4>
+                <p>Rapid oral absorption; minimal protein binding; largely renal excretion; half-life 6–8 h. Few clinically significant drug interactions — a major advantage in polytherapy. Dose-adjust in renal impairment.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">SV2A</span>
+              <span class="pill">Renal excretion</span>
+              <span class="pill pill--amber">Behavioural effects</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">12</span>
+            <span class="drug-title">
+              <strong>Gabapentin &amp; pregabalin</strong>
+              <span>Cyclic GABA analogues · α₂δ ligands · focal seizures &amp; neuropathic pain</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Bind the <strong>α₂δ subunit</strong> of voltage-gated Ca²⁺ channels and reduce release of excitatory neurotransmitters. They are not true GABA agonists despite the name.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Adjunctive therapy for focal seizures; neuropathic pain (diabetic neuropathy, post-herpetic neuralgia); generalised anxiety disorder (pregabalin); gabapentin is also used for restless legs and pruritus.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Dizziness, somnolence, ataxia, fatigue, peripheral oedema, weight gain. Pregabalin can cause euphoria and has misuse potential; both can cause withdrawal seizures if stopped abruptly. Rare angioedema and respiratory depression with opioids.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Kinetics &amp; pearls</h4>
+                <p>Renally excreted; gabapentin absorption is saturable (dose-dependent bioavailability), while pregabalin has ~90% bioavailability. Dose-adjust in renal impairment. Not effective for absence or myoclonic seizures.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">α₂δ ligand</span>
+              <span class="pill">Neuropathic pain</span>
+              <span class="pill pill--amber">Renal dosing</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">13</span>
+            <span class="drug-title">
+              <strong>Topiramate</strong>
+              <span>Fructose derivative · broad-spectrum · multiple mechanisms</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Blocks Na⁺ channels, antagonises AMPA/kainate glutamate receptors, potentiates GABA-A activity, and inhibits carbonic anhydrase. A true multi-target drug.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Focal and generalised tonic–clonic seizures; Lennox–Gastaut; adjunct in absence/myoclonic epilepsy; migraine prophylaxis. Sometimes used for weight management and bipolar disorder.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <ul>
+                  <li><strong>Cognitive slowing and word-finding difficulty</strong> — often limiting.</li>
+                  <li>Paraesthesias, somnolence, dizziness, fatigue.</li>
+                  <li><strong>Nephrolithiasis</strong>, metabolic acidosis, oligohidrosis in children.</li>
+                  <li>Acute angle-closure glaucoma; weight loss; rare hepatic failure.</li>
+                </ul>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Start low and titrate slowly to limit cognitive effects. Avoid in patients with a history of kidney stones. Enzyme inducer at higher doses; can reduce oral contraceptive efficacy at ≥200 mg/day.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--mint">Broad spectrum</span>
+              <span class="pill pill--amber">Kidney stones</span>
+              <span class="pill">Word-finding</span>
+              <span class="pill">Weight loss</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">14</span>
+            <span class="drug-title">
+              <strong>Zonisamide</strong>
+              <span>Benzisoxazole · focal &amp; generalised · carbonic anhydrase inhibitor</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p>Blocks Na⁺ channels and T-type Ca²⁺ channels; inhibits carbonic anhydrase. Broad-spectrum but mainly used as adjunct.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Adjunct for focal seizures, generalised tonic–clonic, myoclonic and absence seizures; selected cases of Lennox–Gastaut and infantile spasms.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Somnolence, dizziness, ataxia, cognitive slowing; <strong>nephrolithiasis</strong>, metabolic acidosis, oligohidrosis; rash/SJS; weight loss; rare aplastic anaemia and renal failure.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Long half-life (~60 h) allows once-daily dosing. Avoid in sulfonamide hypersensitivity and kidney stone disease. Monitor bicarbonate with long-term use.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill">Long half-life</span>
+              <span class="pill pill--amber">Kidney stones</span>
+              <span class="pill">Sulfonamide</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">15</span>
+            <span class="drug-title">
+              <strong>Vigabatrin &amp; tiagabine</strong>
+              <span>GABAergic · visual field risk · focal seizures</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p><strong>Vigabatrin</strong> irreversibly inhibits GABA transaminase, raising GABA levels. <strong>Tiagabine</strong> inhibits the GAT-1 GABA reuptake transporter, prolonging GABA action.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Vigabatrin: infantile spasms (West syndrome), adjunct in focal seizures, selected tuberous sclerosis cases. Tiagabine: adjunct for focal seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Vigabatrin: <strong>irreversible visual field constriction</strong> (mandatory visual monitoring), sedation, weight gain, psychosis, MRI abnormalities in infants. Tiagabine: dizziness, asthenia, nervousness, myoclonus, paradoxical seizures.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Vigabatrin’s visual toxicity restricts it to serious indications such as infantile spasms. Tiagabine is a second-line adjunct and is not used for generalised epilepsies.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--rose">Visual field loss</span>
+              <span class="pill">GABA transaminase</span>
+              <span class="pill">GAT-1</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">16</span>
+            <span class="drug-title">
+              <strong>Lacosamide, perampanel &amp; rufinamide</strong>
+              <span>Newer adjuncts · focal seizures · special syndromes</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanisms</h4>
+                <p><strong>Lacosamide</strong> enhances slow inactivation of Na⁺ channels. <strong>Perampanel</strong> is a selective AMPA receptor antagonist. <strong>Rufinamide</strong> prolongs Na⁺ channel inactivation and is used in Lennox–Gastaut.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Lacosamide and perampanel: adjunct for focal seizures, with perampanel also approved for generalised tonic–clonic seizures. Rufinamide: adjunct for Lennox–Gastaut syndrome.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Lacosamide: dizziness, ataxia, diplopia, headache, <strong>PR prolongation</strong> (caution in cardiac disease). Perampanel: dizziness, somnolence, falls, <strong>psychiatric/behavioural effects</strong>. Rufinamide: somnolence, vomiting, headache, rash, QT shortening.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>These are generally add-on drugs for refractory epilepsy. Perampanel is taken at bedtime because of sedation; its long half-life allows once-daily dosing. Rufinamide must be titrated slowly.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill">Lacosamide · PR interval</span>
+              <span class="pill">Perampanel · AMPA</span>
+              <span class="pill">Rufinamide · LGS</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="drug" data-reveal>
+          <summary>
+            <span class="drug-index">17</span>
+            <span class="drug-title">
+              <strong>Felbamate &amp; acetazolamide</strong>
+              <span>Reserve drug · adjunct · serious toxicity</span>
+            </span>
+            <svg class="drug-chevron icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="drug-body">
+            <div class="drug-facts">
+              <div class="drug-fact">
+                <h4>Mechanism</h4>
+                <p><strong>Felbamate</strong> antagonises NMDA/glycine receptors and potentiates GABA; <strong>acetazolamide</strong> inhibits carbonic anhydrase, producing mild metabolic acidosis that reduces neuronal excitability.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Clinical uses</h4>
+                <p>Felbamate: refractory focal seizures and Lennox–Gastaut, reserved because of toxicity. Acetazolamide: adjunct in absence seizures and catamenial epilepsy; also used in glaucoma and altitude sickness.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Adverse effects</h4>
+                <p>Felbamate: <strong>aplastic anaemia and hepatic failure</strong> — mandatory monitoring. Acetazolamide: paraesthesia, somnolence, metabolic acidosis, hypokalaemia, kidney stones; tolerance to the antiseizure effect develops.</p>
+              </div>
+              <div class="drug-fact">
+                <h4>Pearls</h4>
+                <p>Felbamate is a drug of last resort. Acetazolamide is not a first-line maintenance AED; its effect wanes with continued use.</p>
+              </div>
+            </div>
+            <div class="drug-tags">
+              <span class="pill pill--rose">Aplastic anaemia</span>
+              <span class="pill">Reserve</span>
+              <span class="pill">Carbonic anhydrase</span>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="callout callout--danger" data-reveal style="margin-top:16px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg>
+        <p><strong>Never stop an AED abruptly.</strong> Abrupt withdrawal — especially of phenobarbitone, benzodiazepines or valproate — can precipitate status epilepticus. Taper over weeks to months under supervision.</p>
+      </div>
+    </section>
+
+
+    <section class="section container" id="uses" aria-labelledby="uses-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">05</span>
+          <h2 class="section-title" id="uses-title">Clinical <em>uses</em></h2>
+        </div>
+        <p class="section-intro">
+          Match the drug to the seizure type. This is the table to revise the night before
+          the exam — and the framework that keeps polypharmacy rational on the ward.
+        </p>
+      </div>
+
+      <div class="table-wrap" data-reveal>
+        <table>
+          <caption>Drugs of choice by seizure type · KD Tripathi</caption>
+          <thead>
+            <tr>
+              <th scope="col">Seizure / condition</th>
+              <th scope="col">Drug of choice</th>
+              <th scope="col">Alternatives &amp; notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Generalised tonic–clonic</th>
+              <td><strong>Phenytoin, carbamazepine or valproate</strong></td>
+              <td>Phenobarbitone, primidone, lamotrigine, topiramate, levetiracetam. Valproate is useful when absence or myoclonic seizures coexist.</td>
+            </tr>
+            <tr>
+              <th scope="row">Absence (petit mal)</th>
+              <td><strong>Ethosuximide or valproate</strong></td>
+              <td>Clonazepam, lamotrigine. Ethosuximide is preferred for pure absence; valproate if tonic–clonic seizures also occur.</td>
+            </tr>
+            <tr>
+              <th scope="row">Myoclonic</th>
+              <td><strong>Valproate</strong></td>
+              <td>Clonazepam, lamotrigine, topiramate, levetiracetam. Avoid carbamazepine and phenytoin — they may worsen myoclonus.</td>
+            </tr>
+            <tr>
+              <th scope="row">Complex partial</th>
+              <td><strong>Carbamazepine</strong></td>
+              <td>Phenytoin, valproate, lamotrigine, gabapentin, topiramate, levetiracetam. Often refractory; combination therapy may be needed.</td>
+            </tr>
+            <tr>
+              <th scope="row">Simple partial</th>
+              <td><strong>Carbamazepine, phenytoin or valproate</strong></td>
+              <td>Lamotrigine, levetiracetam, gabapentin, topiramate.</td>
+            </tr>
+            <tr>
+              <th scope="row">Secondarily generalised</th>
+              <td><strong>Carbamazepine, phenytoin or valproate</strong></td>
+              <td>Same adjuncts as focal seizures; treat the underlying focal epilepsy.</td>
+            </tr>
+            <tr>
+              <th scope="row">Febrile seizures</th>
+              <td><strong>Rectal diazepam</strong> (intermittent)</td>
+              <td>Clobazam intermittent; antipyretics and parental education. Continuous prophylaxis is rarely justified.</td>
+            </tr>
+            <tr>
+              <th scope="row">Status epilepticus</th>
+              <td><strong>IV lorazepam</strong> (or IV diazepam)</td>
+              <td>Then fosphenytoin/phenytoin or phenobarbitone; refractory cases need midazolam, propofol or thiopentone in ICU.</td>
+            </tr>
+            <tr>
+              <th scope="row">Infantile spasms</th>
+              <td><strong>Vigabatrin</strong> (especially tuberous sclerosis) or ACTH/corticosteroids</td>
+              <td>Early treatment is important for developmental outcome; monitor visual fields with vigabatrin.</td>
+            </tr>
+            <tr>
+              <th scope="row">Lennox–Gastaut syndrome</th>
+              <td><strong>Valproate</strong></td>
+              <td>Lamotrigine, topiramate, rufinamide, clobazam, felbamate. Often requires rational polytherapy.</td>
+            </tr>
+            <tr>
+              <th scope="row">Trigeminal neuralgia</th>
+              <td><strong>Carbamazepine</strong></td>
+              <td>Phenytoin, baclofen, gabapentin, lamotrigine; surgical options for refractory cases.</td>
+            </tr>
+            <tr>
+              <th scope="row">Bipolar disorder</th>
+              <td><strong>Valproate, carbamazepine or lamotrigine</strong></td>
+              <td>Choice depends on the phase (mania vs depression) and the patient’s metabolic profile.</td>
+            </tr>
+            <tr>
+              <th scope="row">Neuropathic pain</th>
+              <td><strong>Gabapentin or pregabalin</strong></td>
+              <td>Carbamazepine for trigeminal neuralgia; lamotrigine and valproate are alternatives in selected patients.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-3" style="margin-top:16px;">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Exam pearl</span>
+          <h3>Absence vs focal</h3>
+          <p>Ethosuximide treats <strong>only absence</strong>. Carbamazepine and phenytoin treat focal seizures but can <strong>worsen absence and myoclonic</strong> epilepsies. Always classify the seizure before choosing.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Exam pearl</span>
+          <h3>Two seizure types</h3>
+          <p>When absence and tonic–clonic seizures coexist, <strong>valproate</strong> is the practical single agent. Lamotrigine or levetiracetam are alternatives when valproate is unsuitable.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Exam pearl</span>
+          <h3>Trigeminal neuralgia</h3>
+          <p><strong>Carbamazepine</strong> is first-line and dramatically effective. Oxcarbazepine is a better-tolerated alternative; baclofen and gabapentin are add-ons.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="status" aria-labelledby="status-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">06</span>
+          <h2 class="section-title" id="status-title">Status <em>epilepticus</em></h2>
+        </div>
+        <p class="section-intro">
+          A neurological emergency: continuous seizure activity for ≥5 minutes (the practical
+          definition; older texts use 30 minutes), or recurrent seizures without recovery of
+          consciousness. Time is brain — treat while you investigate.
+        </p>
+      </div>
+
+      <div class="callout callout--danger" data-reveal style="margin-bottom:18px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path></svg>
+        <p><strong>Do not wait for a diagnosis before treating.</strong> Secure the airway, give oxygen, check glucose, establish IV access, and start a benzodiazepine. Look for reversible causes in parallel: hypoglycaemia, hyponatraemia, hypocalcaemia, infection, stroke, trauma, eclampsia, drug toxicity or withdrawal.</p>
+      </div>
+
+      <ol class="timeline">
+        <li data-reveal>
+          <span class="timeline-dot">0–5</span>
+          <div class="timeline-content glass">
+            <h3>Stabilise &amp; investigate</h3>
+            <p>Airway, breathing, circulation; high-flow oxygen; cardiac and SpO₂ monitoring; IV access. Check capillary glucose — give <strong>thiamine 100 mg IV</strong> before glucose if deficiency is suspected. Send electrolytes, calcium, magnesium, ABG, toxicology and relevant imaging.</p>
+            <span class="pill pill--mint">ABC first</span>
+          </div>
+        </li>
+        <li data-reveal>
+          <span class="timeline-dot">5–20</span>
+          <div class="timeline-content glass">
+            <h3>First-line benzodiazepine</h3>
+            <p><strong>Lorazepam 0.1 mg/kg IV</strong> (max 4 mg) over 2 minutes, <em>or</em> <strong>diazepam 0.15–0.2 mg/kg IV</strong> (max 10 mg) slowly. Repeat once after 5–10 minutes if the seizure continues. Without IV access: rectal diazepam, IM midazolam, or intranasal/buccal midazolam.</p>
+            <span class="pill pill--amber">Monitor respiration</span>
+          </div>
+        </li>
+        <li data-reveal>
+          <span class="timeline-dot">20–40</span>
+          <div class="timeline-content glass">
+            <h3>Second-line long-acting AED</h3>
+            <p><strong>Fosphenytoin 15–20 mg PE/kg IV</strong> (max 1500 mg PE) or <strong>phenytoin 15–20 mg/kg IV</strong> at ≤50 mg/min with ECG and BP monitoring. Alternative: <strong>phenobarbitone 15–20 mg/kg IV</strong> at ≤100 mg/min. Levetiracetam or valproate are used as alternatives in some protocols.</p>
+            <span class="pill pill--violet">Cardiac monitoring</span>
+          </div>
+        </li>
+        <li data-reveal>
+          <span class="timeline-dot">40+</span>
+          <div class="timeline-content glass">
+            <h3>Refractory status</h3>
+            <p>Move to ICU. <strong>Midazolam infusion</strong> (bolus then continuous infusion), <strong>propofol</strong>, or <strong>thiopentone</strong> with intubation and mechanical ventilation. Continuous EEG monitoring is ideal; titrate to burst suppression or seizure control.</p>
+            <span class="pill pill--rose">ICU + EEG</span>
+          </div>
+        </li>
+        <li data-reveal>
+          <span class="timeline-dot">Cause</span>
+          <div class="timeline-content glass">
+            <h3>Treat the precipitant</h3>
+            <p>Correct hypoglycaemia, hyponatraemia and hypocalcaemia; treat meningitis/encephalitis; image for stroke or haemorrhage; manage eclampsia with <strong>magnesium sulfate</strong>; identify drug toxicity or withdrawal. Prevention of recurrence matters as much as stopping the seizure.</p>
+            <span class="pill">Look for the why</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+
+    <section class="section container" id="principles" aria-labelledby="principles-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">07</span>
+          <h2 class="section-title" id="principles-title">Principles of <em>therapy</em></h2>
+        </div>
+        <p class="section-intro">
+          Good epilepsy care is more than picking a drug. Start simple, titrate carefully,
+          monitor what matters, and treat the patient — not just the EEG.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 1</span>
+          <h3>Monotherapy first</h3>
+          <p>Begin with a single appropriate AED at a low dose, then titrate to the lowest effective dose. Monotherapy improves adherence and limits interactions. Add a second drug only after adequate trials.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 2</span>
+          <h3>Titrate slowly</h3>
+          <p>Rapid titration increases rash (lamotrigine, carbamazepine), sedation and cognitive effects. Start low, go slow — especially in the elderly and in hepatic or renal impairment.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 3</span>
+          <h3>Monitor selectively</h3>
+          <p>Plasma levels are most useful for phenytoin (zero-order kinetics), carbamazepine, valproate and phenobarbitone. Monitor CBC, LFTs, sodium, calcium, vitamin D and visual fields where relevant.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 4</span>
+          <h3>Withdraw gradually</h3>
+          <p>After a suitable seizure-free period (often 2–5 years, depending on syndrome), taper slowly over weeks to months. Abrupt withdrawal can precipitate status epilepticus.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 5</span>
+          <h3>Keep it simple</h3>
+          <p>Use the fewest daily doses that work. A seizure diary, pill box and clear written instructions improve adherence more than complex regimens.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Step 6</span>
+          <h3>Counsel the whole life</h3>
+          <p>Discuss sleep deprivation, alcohol, driving, swimming, heights, pregnancy planning, contraception and bone health. Many seizure recurrences are triggered by lifestyle factors.</p>
+        </article>
+      </div>
+
+      <div class="table-wrap" data-reveal style="margin-top:16px;">
+        <table>
+          <caption>Special populations · practical considerations</caption>
+          <thead>
+            <tr>
+              <th scope="col">Population</th>
+              <th scope="col">Preferred / safer options</th>
+              <th scope="col">Avoid or caution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Pregnancy</th>
+              <td>Lamotrigine or levetiracetam after preconception counselling; folic acid 5 mg/day; monotherapy at lowest effective dose; monitor levels.</td>
+              <td><strong>Valproate</strong> (neural tube defects, developmental harm); phenytoin and carbamazepine also carry teratogenic risk. Avoid polytherapy.</td>
+            </tr>
+            <tr>
+              <th scope="row">Breastfeeding</th>
+              <td>Most AEDs are compatible; monitor the infant for sedation and poor feeding. Levetiracetam and lamotrigine are commonly used.</td>
+              <td>Sedating combinations; phenobarbitone and benzodiazepines need extra caution.</td>
+            </tr>
+            <tr>
+              <th scope="row">Older adults</th>
+              <td>Start at low doses; prefer agents with fewer interactions (levetiracetam, lamotrigine). Review falls, cognition and bone health.</td>
+              <td>Carbamazepine/oxcarbazepine (hyponatraemia), sedating drugs, complex polypharmacy.</td>
+            </tr>
+            <tr>
+              <th scope="row">Liver disease</th>
+              <td>Levetiracetam, gabapentin, pregabalin (renally cleared); reduce doses of hepatically metabolised drugs.</td>
+              <td><strong>Valproate</strong> (hepatotoxicity), felbamate; caution with phenytoin, carbamazepine.</td>
+            </tr>
+            <tr>
+              <th scope="row">Renal disease</th>
+              <td>Dose-adjust levetiracetam, gabapentin, pregabalin, topiramate and zonisamide; monitor levels of renally cleared drugs.</td>
+              <td>Accumulation and toxicity if doses are not adjusted; avoid nephrotoxic combinations.</td>
+            </tr>
+            <tr>
+              <th scope="row">Children</th>
+              <td>Ethosuximide for pure absence; vigabatrin or ACTH for infantile spasms; phenobarbitone for neonatal seizures; age-appropriate dosing.</td>
+              <td>Valproate under 2 years (hepatotoxicity risk); sedating regimens that affect learning.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section container" id="adverse" aria-labelledby="adverse-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">08</span>
+          <h2 class="section-title" id="adverse-title">Adverse effects &amp; <em>interactions</em></h2>
+        </div>
+        <p class="section-intro">
+          Every AED has a signature toxicity. Learn the one or two effects that define each
+          drug — those are what examinations and prescriptions test.
+        </p>
+      </div>
+
+      <div class="table-wrap" data-reveal>
+        <table>
+          <caption>Signature adverse effects · high-yield associations</caption>
+          <thead>
+            <tr>
+              <th scope="col">Drug</th>
+              <th scope="col">Characteristic adverse effects</th>
+              <th scope="col">Monitoring / caveat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Phenytoin</th><td>Gingival hyperplasia, hirsutism, acne, ataxia, nystagmus, megaloblastic anaemia, osteomalacia, SJS/TEN, purple glove syndrome.</td><td>Plasma level; folate and vitamin D; oral hygiene; slow IV infusion with cardiac monitoring.</td></tr>
+            <tr><th scope="row">Carbamazepine</th><td>Hyponatraemia/SIADH, aplastic anaemia, agranulocytosis, hepatotoxicity, SJS/TEN, diplopia, ataxia.</td><td>CBC, LFT, sodium; HLA-B*1502 before starting in at-risk Asian patients.</td></tr>
+            <tr><th scope="row">Valproate</th><td>Hepatotoxicity, pancreatitis, thrombocytopenia, hyperammonaemia, weight gain, tremor, alopecia, neural tube defects.</td><td>LFT, CBC, amylase; avoid in pregnancy; monitor ammonia if encephalopathy.</td></tr>
+            <tr><th scope="row">Ethosuximide</th><td>Nausea, anorexia, sedation, ataxia, headache, rash, rare blood dyscrasias and SLE-like syndrome.</td><td>CBC if symptoms; useful only for absence seizures.</td></tr>
+            <tr><th scope="row">Phenobarbitone</th><td>Sedation, cognitive impairment, hyperactivity in children, rash, megaloblastic anaemia, osteomalacia, dependence.</td><td>Plasma level; avoid abrupt withdrawal; enzyme induction.</td></tr>
+            <tr><th scope="row">Benzodiazepines</th><td>Sedation, ataxia, amnesia, tolerance, dependence, respiratory depression with IV use or opioids.</td><td>Flumazenil is the antagonist; monitor breathing during IV administration.</td></tr>
+            <tr><th scope="row">Lamotrigine</th><td>Rash, SJS/TEN, insomnia, headache, dizziness, diplopia, ataxia.</td><td>Slow titration; halve dose with valproate; stop immediately if rash develops.</td></tr>
+            <tr><th scope="row">Levetiracetam</th><td>Irritability, aggression, anxiety, psychosis, somnolence, fatigue, dizziness.</td><td>Screen for psychiatric history; dose-adjust in renal impairment.</td></tr>
+            <tr><th scope="row">Gabapentin / pregabalin</th><td>Dizziness, somnolence, ataxia, peripheral oedema, weight gain; pregabalin misuse and euphoria.</td><td>Renal dosing; taper slowly; caution with opioids (respiratory depression).</td></tr>
+            <tr><th scope="row">Topiramate</th><td>Cognitive slowing, word-finding difficulty, paraesthesia, kidney stones, metabolic acidosis, acute angle-closure glaucoma, weight loss.</td><td>Bicarbonate; hydration; avoid in stone disease; slow titration.</td></tr>
+            <tr><th scope="row">Zonisamide</th><td>Kidney stones, metabolic acidosis, rash/SJS, oligohidrosis, weight loss, cognitive slowing.</td><td>Bicarbonate; avoid in sulfonamide allergy and stone disease.</td></tr>
+            <tr><th scope="row">Vigabatrin</th><td><strong>Irreversible visual field constriction</strong>, sedation, weight gain, psychosis, MRI changes in infants.</td><td>Baseline and periodic visual field testing; restrict to serious indications.</td></tr>
+            <tr><th scope="row">Tiagabine</th><td>Dizziness, asthenia, nervousness, myoclonus, paradoxical seizures.</td><td>Adjunct for focal seizures; do not use in generalised epilepsy.</td></tr>
+            <tr><th scope="row">Felbamate</th><td><strong>Aplastic anaemia, hepatic failure</strong>, insomnia, weight loss.</td><td>Reserve for refractory cases; mandatory CBC and LFT monitoring.</td></tr>
+            <tr><th scope="row">Lacosamide</th><td>Dizziness, ataxia, diplopia, headache, PR prolongation.</td><td>ECG in cardiac disease; avoid in severe conduction disorders.</td></tr>
+            <tr><th scope="row">Perampanel</th><td>Dizziness, somnolence, falls, aggression, psychosis, suicidal ideation.</td><td>Bedtime dosing; monitor mood and behaviour.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-3" style="margin-top:16px;">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Interaction pattern</span>
+          <h3>Enzyme inducers</h3>
+          <p><strong>Phenytoin, carbamazepine, phenobarbitone, primidone</strong> and high-dose topiramate lower levels of oral contraceptives, warfarin, corticosteroids, vitamin D and many other AEDs. Expect contraceptive failure and drug withdrawal seizures.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Interaction pattern</span>
+          <h3>Valproate inhibition</h3>
+          <p>Valproate inhibits CYP2C9 and UGT, and blocks epoxide hydrolase. It <strong>raises lamotrigine</strong> (rash risk), displaces phenytoin, and raises carbamazepine epoxide. It is the classic “victim and perpetrator” AED.</p>
+        </article>
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Interaction pattern</span>
+          <h3>Additive toxicity</h3>
+          <p>Benzodiazepines plus opioids or alcohol cause respiratory depression. Carbamazepine plus macrolides, azoles or isoniazid can cause toxicity. Lamotrigine plus valproate increases rash risk. Always reconcile the full medication list.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="review" aria-labelledby="review-title">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="section-number">09</span>
+          <h2 class="section-title" id="review-title">Quick <em>review</em></h2>
+        </div>
+        <p class="section-intro">
+          One-line associations, a mnemonic, and a few self-check questions. Use these for
+          spaced repetition rather than last-minute cramming.
+        </p>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-item glass" data-reveal><span>01</span><div><h3>Phenytoin</h3><p>Gum hyperplasia, hirsutism, ataxia, osteomalacia, zero-order kinetics. Therapeutic range 10–20 µg/mL.</p></div></div>
+        <div class="review-item glass" data-reveal><span>02</span><div><h3>Carbamazepine</h3><p>DOC complex partial and trigeminal neuralgia; hyponatraemia, aplastic anaemia, HLA-B*1502, autoinduction.</p></div></div>
+        <div class="review-item glass" data-reveal><span>03</span><div><h3>Valproate</h3><p>Broad-spectrum; DOC absence and myoclonic; hepatotoxicity, pancreatitis, weight gain, neural tube defects.</p></div></div>
+        <div class="review-item glass" data-reveal><span>04</span><div><h3>Ethosuximide</h3><p>Pure absence seizures; T-type Ca²⁺ channel blocker; no coverage of tonic–clonic seizures.</p></div></div>
+        <div class="review-item glass" data-reveal><span>05</span><div><h3>Lamotrigine</h3><p>Broad-spectrum; rash/SJS; slow titration; valproate doubles its half-life — halve the dose.</p></div></div>
+        <div class="review-item glass" data-reveal><span>06</span><div><h3>Levetiracetam</h3><p>SV2A binder; broad-spectrum; behavioural effects; renal excretion; minimal interactions.</p></div></div>
+        <div class="review-item glass" data-reveal><span>07</span><div><h3>Topiramate</h3><p>Kidney stones, metabolic acidosis, word-finding difficulty, weight loss, glaucoma.</p></div></div>
+        <div class="review-item glass" data-reveal><span>08</span><div><h3>Vigabatrin</h3><p>Irreversible GABA transaminase inhibitor; infantile spasms; irreversible visual field constriction.</p></div></div>
+        <div class="review-item glass" data-reveal><span>09</span><div><h3>Status epilepticus</h3><p>ABC → IV lorazepam (or diazepam) → fosphenytoin/phenytoin or phenobarbitone → ICU/midazolam/propofol.</p></div></div>
+        <div class="review-item glass" data-reveal><span>10</span><div><h3>Pregnancy</h3><p>Avoid valproate; prefer lamotrigine or levetiracetam; folic acid 5 mg/day; monotherapy at the lowest effective dose.</p></div></div>
+      </div>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Mnemonic</span>
+          <h3>VALPROATE</h3>
+          <ul class="list-clean" style="margin-top:10px;">
+            <li><strong>V</strong> — Vomiting, weight gain</li>
+            <li><strong>A</strong> — Alopecia</li>
+            <li><strong>L</strong> — Liver toxicity</li>
+            <li><strong>P</strong> — Pancreatitis</li>
+            <li><strong>R</strong> — Reproductive harm (neural tube defects)</li>
+            <li><strong>O</strong> — Osteoporosis risk</li>
+            <li><strong>A</strong> — Ammonia elevation</li>
+            <li><strong>T</strong> — Tremor, thrombocytopenia</li>
+            <li><strong>E</strong> — Enzyme inhibition (raises lamotrigine)</li>
+          </ul>
+        </article>
+
+        <article class="card glass" data-reveal>
+          <span class="card-kicker">Self-check</span>
+          <h3>Test yourself</h3>
+          <div style="display:grid; gap:8px; margin-top:12px;">
+            <details class="self-check"><summary>DOC for pure absence seizures?</summary><p>Ethosuximide. Valproate is preferred when absence coexists with tonic–clonic or myoclonic seizures.</p></details>
+            <details class="self-check"><summary>Which AED causes gum hyperplasia and hirsutism?</summary><p>Phenytoin. Also causes ataxia, nystagmus, megaloblastic anaemia and osteomalacia.</p></details>
+            <details class="self-check"><summary>First-line drug for status epilepticus?</summary><p>IV lorazepam (alternative IV diazepam), followed by a long-acting AED such as fosphenytoin/phenytoin or phenobarbitone.</p></details>
+            <details class="self-check"><summary>Which AED causes irreversible visual field loss?</summary><p>Vigabatrin. Visual field testing is mandatory; use is restricted to serious indications such as infantile spasms.</p></details>
+            <details class="self-check"><summary>Which two AEDs are associated with kidney stones?</summary><p>Topiramate and zonisamide — both inhibit carbonic anhydrase and cause metabolic acidosis.</p></details>
+            <details class="self-check"><summary>Which AED binds SV2A and has minimal interactions?</summary><p>Levetiracetam. It is renally excreted and is a useful option in liver disease and polytherapy.</p></details>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout callout--tip" data-reveal style="margin-top:16px;">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"></path></svg>
+        <p><strong>Final revision rule:</strong> for every drug, be able to state its mechanism, its defining adverse effect, its key interaction, and the seizure type it treats. That four-point framework covers most exam questions.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>
+        <strong>Antiepileptic Drugs — KD Tripathi Notes.</strong><br>
+        Prepared by Onkar Kawade as an educational study aid, based on the antiepileptic drugs chapter of
+        <em>Essentials of Medical Pharmacology</em> by KD Tripathi. Doses, protocols and monitoring
+        thresholds are indicative only — always verify against the current textbook, formulary and
+        institutional guidelines before clinical use. This page is not medical advice.
+      </p>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="index.html">Portfolio</a>
+        <a href="#overview">Overview</a>
+        <a href="#uses">Drugs of choice</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+  </button>
+
+
+  <script>
+    (function () {
+      "use strict";
+
+      var root = document.documentElement;
+      var themeToggle = document.getElementById("theme-toggle");
+      var menuToggle = document.getElementById("menu-toggle");
+      var navLinks = document.getElementById("nav-links");
+      var header = document.querySelector(".site-header");
+      var progress = document.getElementById("scroll-progress");
+      var backToTop = document.getElementById("back-to-top");
+      var printButton = document.getElementById("print-btn");
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+
+      /* ---------- Theme ---------- */
+
+      function setTheme(theme, persist) {
+        root.dataset.theme = theme;
+        if (persist) {
+          try { localStorage.setItem("aed-theme", theme); } catch (error) { /* ignore */ }
+        }
+        if (themeToggle) {
+          themeToggle.setAttribute(
+            "aria-label",
+            theme === "light" ? "Switch to dark theme" : "Switch to light theme"
+          );
+        }
+        if (themeColor) {
+          themeColor.setAttribute("content", theme === "light" ? "#edf4f1" : "#071417");
+        }
+      }
+
+      setTheme(root.dataset.theme === "light" ? "light" : "dark", false);
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+          setTheme(root.dataset.theme === "light" ? "dark" : "light", true);
+        });
+      }
+
+      /* ---------- Mobile menu ---------- */
+
+      function closeMenu() {
+        if (!navLinks || !menuToggle) return;
+        navLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+      }
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          var open = navLinks.classList.toggle("is-open");
+          menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+
+        navLinks.addEventListener("click", function (event) {
+          if (event.target.closest("a")) closeMenu();
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") closeMenu();
+        });
+
+        document.addEventListener("click", function (event) {
+          if (
+            navLinks.classList.contains("is-open") &&
+            !navLinks.contains(event.target) &&
+            !menuToggle.contains(event.target)
+          ) {
+            closeMenu();
+          }
+        });
+      }
+
+      /* ---------- Scroll UI ---------- */
+
+      var ticking = false;
+
+      function onScroll() {
+        var scrollTop = window.scrollY || window.pageYOffset;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (progress) {
+          progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + "%";
+        }
+        if (header) {
+          header.classList.toggle("is-scrolled", scrollTop > 18);
+        }
+        if (backToTop) {
+          backToTop.classList.toggle("is-visible", scrollTop > 600);
+        }
+        updateActiveLink(scrollTop);
+        ticking = false;
+      }
+
+      window.addEventListener("scroll", function () {
+        if (!ticking) {
+          window.requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      if (backToTop) {
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      /* ---------- Active navigation link ---------- */
+
+      var navAnchors = navLinks ? Array.prototype.slice.call(navLinks.querySelectorAll('a[href^="#"]')) : [];
+      var spySections = navAnchors.map(function (link) {
+        var id = link.getAttribute("href").slice(1);
+        return document.getElementById(id);
+      }).filter(Boolean);
+
+      function updateActiveLink(scrollTop) {
+        if (!spySections.length) return;
+        var current = spySections[0];
+        var marker = scrollTop + 150;
+
+        spySections.forEach(function (section) {
+          if (section.offsetTop <= marker) current = section;
+        });
+
+        navAnchors.forEach(function (link) {
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === "#" + current.id
+          );
+        });
+      }
+
+      /* ---------- Reveal on scroll ---------- */
+
+      var revealItems = document.querySelectorAll("[data-reveal]");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+      } else {
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+
+        revealItems.forEach(function (item) { revealObserver.observe(item); });
+      }
+
+      /* ---------- Print ---------- */
+
+      var printState = [];
+
+      window.addEventListener("beforeprint", function () {
+        var allDetails = document.querySelectorAll("details");
+        printState = Array.prototype.map.call(allDetails, function (item) { return item.open; });
+        allDetails.forEach(function (item) { item.open = true; });
+      });
+
+      window.addEventListener("afterprint", function () {
+        var allDetails = document.querySelectorAll("details");
+        allDetails.forEach(function (item, index) {
+          if (typeof printState[index] === "boolean") item.open = printState[index];
+        });
+      });
+
+      if (printButton) {
+        printButton.addEventListener("click", function () { window.print(); });
+      }
+
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
